@@ -1,7 +1,9 @@
 /*
 Two Questions:
-1) Given a sorted array A (which has integers possibly with repetitions) and an integer q, return the index of  the first occurrence of q in A if q is present in A and -1 otherwise.
-2) Given a sorted array A  and an integer q, return the index of  the first occurrence of  a number greater than q in A if such a number exists. Else it returns -1.
+1) Given a sorted array A (which has integers possibly with repetitions) and an integer q, return the index of  the 
+first occurrence of q in A if q is present in A and -1 otherwise.
+2) Given a sorted array A  and an integer q, return the index of  the 
+first occurrence of  a number greater than q in A if such a number exists. Else it returns -1.
 
 */
 #include <stdio.h>
