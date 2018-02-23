@@ -2,8 +2,8 @@
 Two Questions:
 1) Given a sorted array A (which has integers possibly with repetitions) and an integer q, return the index of  the 
 first occurrence of q in A if q is present in A and -1 otherwise.
-2) Given a sorted array A  and an integer q, return the index of  the 
-first occurrence of  a number greater than q in A if such a number exists. Else it returns -1.
+2) Given a sorted array A (which has integers possibly with repetitions) and an integer q, return the index of  the 
+last occurrence of q in A if q is present in A and -1 otherwise..
 
 */
 #include <stdio.h>
@@ -18,10 +18,9 @@ int main()
 		mid=(low+high)/2;
 		if(k==a[mid])
 		{
-			if(a[mid-1]==k)
-				{high=mid-1;flag++;}
-			else
-				break;
+			c=mid;
+			high=mid-1;flag++;
+		    
 		}
 		else if(k>a[mid])
 		{
@@ -39,12 +38,9 @@ int main()
 		mid=(low+high)/2;
 		if(k==a[mid])
 		{
-			if(a[mid+1]==k)
-				{low=mid+1;flag++;}
-			else
-			{
-				c1=mid;break;
-			}
+		    c1=mid;
+		    low=mid+1;flag++;
+		    
 		}
 		else if(k>=a[mid])
 		{
@@ -56,7 +52,7 @@ int main()
 		}
 	}
 	printf("First occurence of %d is at %d\n",k,c);
-	printf("The next element after the multiple occurence of %d is %d",k,a[c1+1]);
+	printf("Last Occurence of %d is %d",k,c1);
 	if(flag==0)
 		printf("not found");
 	return 0;
