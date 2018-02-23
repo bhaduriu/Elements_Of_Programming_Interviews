@@ -1,4 +1,4 @@
-.*
+/*
 Assume all elements are distinct e.g. 55,63,68,72,11,17,44,49
 
 A[i] < A[i+1] < A[i+2] <…<A[n-1] < A[0] <…<A[i-1]
