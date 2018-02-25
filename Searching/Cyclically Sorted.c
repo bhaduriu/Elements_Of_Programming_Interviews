@@ -26,7 +26,7 @@ int main()
 			if(a[mid]>a[0])
 				low=mid+1;
 			else
-				high=mid+1;
+				high=mid-1;
 		}
 	}
 	mid1=mid+1;
