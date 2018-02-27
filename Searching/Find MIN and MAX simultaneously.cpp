@@ -2,6 +2,7 @@
 Partition the array into min candidates and max candidates by comparing successive pairs,
 this will give (n/2)-1 comparisons to find the min from the min candidates and (n/2)-1 
 comparisons to find the max from the max candidates, yielding a total of (3n/2)-2 comparisons
+Total cost: 3 comparisons per 2 elements = 3n/2
 */
 
 #include <iostream>
