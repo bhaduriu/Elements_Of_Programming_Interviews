@@ -20,7 +20,7 @@ int main()
         {
             if(a[i]>max)
                 max=a[i];
-            else
+            else if(a[i]<min)
                 min=a[i];
         }
         else// for all other even sized array
