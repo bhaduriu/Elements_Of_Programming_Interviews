@@ -1,3 +1,10 @@
+/*
+Get pointer to the last node,
+Move all the odd nodes to end,
+Delete odd nodes in between,
+even->odd
+*/
+
 #include <iostream>
 #include <malloc.h>
 using namespace std;
@@ -101,4 +108,88 @@ int main()
     return 0;
 }
 
+
+/*
+Append even elements to one list,
+Odd elements to the second list,
+even->odd 
+*/
+
+#include <iostream>
+#include <malloc.h>
+using namespace std;
+struct node{
+    int data;
+    struct node* next;
+};
+struct node* newnode(int x)
+{
+    struct node* t=(struct node*)malloc(sizeof(struct node));
+    t->data=x;t->next=NULL;
+    return t;
+}
+void append(struct node* head, int x)
+{
+    if(head!=NULL)
+    {
+        struct node* p = head;
+        while(p->next!=NULL)
+            p=p->next;
+        p->next=newnode(x);
+    }
+}
+struct node* evenodd(struct node* head)
+{
+    struct node* even=NULL,*odd=NULL,*temp=NULL;
+    struct node* e=even,*o=odd;struct node* p= head;
+    while(p!=NULL)
+    {
+        temp = newnode(p->data);
+        if(p->data%2)//odd
+        {
+            if(odd==NULL)
+                odd=temp;
+            else
+                o->next=temp;
+            o=temp;
+        }
+        else
+        {
+            if(even==NULL)
+                even=temp;
+            else
+                e->next=temp;
+            e=temp;
+        }
+        p=p->next;
+    }
+    e->next=odd;
+    o->next=NULL;
+    return even;
+}
+void print(struct node* head)
+{
+    struct node* p=head;
+    while(p!=NULL)
+    {
+        cout<<p->data<<" ";
+        p=p->next;
+    }
+}
+int main()
+{
+    struct node* head=NULL;
+    head=newnode(105);
+    append(head,15);
+    append(head,8);
+    append(head,12);
+    append(head,10);
+    append(head,5);
+    append(head,4);
+    append(head,1);
+    append(head,7);
+    append(head,6);
+    head=evenodd(head);
+    print(head);
+}
 
